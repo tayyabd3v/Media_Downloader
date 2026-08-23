@@ -3437,10 +3437,11 @@ const server =
 |--------------------------------------------------------------------------
 */
 
-server.listen(
-  PORT,
-  "0.0.0.0",
-  () => {
+  const HOST = "0.0.0.0";
+
+  server.listen(PORT, HOST, () => {
+    console.log(`Server running on ${HOST}:${PORT}`);
+  
     console.log("");
     console.log(
       "=========================================="
