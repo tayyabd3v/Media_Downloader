@@ -900,6 +900,19 @@ async function handleRequest(req, res) {
 
   const pathname = parsedUrl.pathname;
 
+    // Railway health check
+  if (
+    req.method === "GET" &&
+    pathname === "/health"
+  ) {
+    sendJson(res, 200, {
+      status: "ok"
+    });
+
+    return;
+  }
+
+
   /*
    * Home page
    */
